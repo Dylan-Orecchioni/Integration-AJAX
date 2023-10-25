@@ -1,5 +1,6 @@
 .container-planets {
     display: flex;
+    justify-content: space-around;
     gap: 30px;
     margin: 25px;
     width: 100%;
@@ -13,6 +14,7 @@
     border: solid 2px white;
     width: 100%;
     height: max-content;
+
     background-image: url("alien-7779711_1920.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,6 +32,7 @@
         background-color: black;
         border: transparent;
         color: white;
+        width: 90%;
 
         &:focus{
           outline: transparent;
@@ -43,7 +46,7 @@
     }
 
     .search {
-      min-width: 100%;
+      width: 100%;
       margin-bottom: 20px;
     }
 

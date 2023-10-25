@@ -57,6 +57,10 @@ table {
   border-spacing: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: black;
@@ -219,6 +223,7 @@ main .container .numbers .section-items-button {
 
 .container-planets {
   display: flex;
+  justify-content: space-around;
   gap: 30px;
   margin: 25px;
   width: 100%;
@@ -249,6 +254,7 @@ main .container .numbers .section-items-button {
   background-color: black;
   border: transparent;
   color: white;
+  width: 90%;
 }
 .container-planets .section-planets .btn input:focus, .container-planets .section-planets .search input:focus {
   outline: transparent;
@@ -257,7 +263,7 @@ main .container .numbers .section-items-button {
   color: white;
 }
 .container-planets .section-planets .search {
-  min-width: 100%;
+  width: 100%;
   margin-bottom: 20px;
 }
 .container-planets .section-planets table {
