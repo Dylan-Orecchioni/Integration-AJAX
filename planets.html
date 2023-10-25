@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Intégration - AJAX</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./logotype.png" alt="logo">
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li class="menu-item active">
+                    <a  href="./index.html">Accueil</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Prochaine mission</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="aside">
+            <nav>
+                <ul class="aside-list">
+                    <li class="aside-item">
+                        <a class="active" href="./planets.html">
+                            <i class="fas fa-solid fa-globe"></i>
+                            Planètes
+                        </a>
+                    </li>
+                    <li class="aside-item">
+
+                        <a href="#"><i class="fas fa-solid fa-rocket"></i>Véhicules</a>
+                    </li>
+                    <li class="aside-item">
+
+                        <a href="#"><i class="fa fa-brands fa-reddit-alien"></i>Personnes</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+
+        <div class="container-planets">
+
+            <div class="section-planets">
+                <h2>Planètes</h2>
+                <select class="btn">
+                    <option value="">Par population</option>
+                </select>
+
+                <div class="search">
+                    <input type="search" value="" placeholder="Faites votre recherche ">
+                    <i class="fas fa-solid fa-globe"></i>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Terrain</th>
+                        </tr>
+                    </thead>
+                    <tbody id="planetData">
+                    <tr>
+                        <td>planet1</td>
+                        <td>cityscape</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="display-planets">
+                <p>Selectionner le contenu à afficher !</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/3de56f6143.js" crossorigin="anonymous"></script>
+</body>
+</html>

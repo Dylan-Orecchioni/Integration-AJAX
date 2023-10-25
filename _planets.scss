@@ -1,0 +1,91 @@
+.container-planets {
+    display: flex;
+    gap: 30px;
+    margin: 25px;
+    width: 100%;
+
+  .section-planets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 25px;
+    border: solid 2px white;
+    width: 100%;
+    height: max-content;
+    background-image: url("alien-7779711_1920.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .btn, .search {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-color: black;
+      border: white solid 1px;
+      padding: 7px;
+
+      input {
+        background-color: black;
+        border: transparent;
+        color: white;
+
+        &:focus{
+          outline: transparent;
+        }
+
+        i {
+          color: white;
+        }
+      }
+
+    }
+
+    .search {
+      min-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+      thead {
+        background-color: #659dd9;
+        color: white;
+      }
+
+      th,td {
+        padding: 15px;
+        color: white;
+      }
+
+      th:first-child, td:first-child {
+        text-align: left;
+      }
+
+      th:last-child, td:last-child {
+        text-align: right;
+      }
+
+      tr {
+        border-bottom: solid 1px white;
+      }
+    }
+
+  }
+
+  .display-planets{
+    display: flex;
+    border: solid 1px white;
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+
+    p{
+      color: #659dd9;
+      font-style: italic;
+    }
+  }
+}
