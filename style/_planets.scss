@@ -15,7 +15,7 @@
     width: 100%;
     height: max-content;
 
-    background-image: url("alien-7779711_1920.jpg");
+    background-image: url("assets/alien-7779711_1920.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -74,6 +74,11 @@
 
       tr {
         border-bottom: solid 1px white;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        &:hover{
+            background-color: #7fa8d5;
+        }
       }
     }
 
