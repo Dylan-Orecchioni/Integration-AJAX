@@ -13,8 +13,8 @@
     padding: 20px;
     align-items: flex-start;
     border: solid 2px white;
-    width: 100%;
-    height: 50vh;
+    width: 60%;
+    height: calc(100% - 90px);
     //overflow-y: scroll;
 
     background-image: url("assets/alien-7779711_1920.jpg");
@@ -52,79 +52,151 @@
       margin-bottom: 20px;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        padding: 20px;
+    .tablePlanet{
+      width: 100%;
+      max-height: 500px;
+      overflow: scroll;
 
-      thead {
-        background-color: #659dd9;
-        color: white;
-      }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          padding: 20px;
 
-      #planetData{
-        height: 200px;
-        overflow: scroll;
-      }
+        thead {
+          background-color: #659dd9;
+          color: white;
+        }
 
-      th,td {
-        padding: 15px;
-        color: white;
-      }
+        th,td {
+          padding: 15px;
+          color: white;
+        }
 
-      th:first-child, td:first-child {
-        text-align: left;
-      }
+        th:first-child, td:first-child {
+          text-align: left;
+        }
 
-      th:last-child, td:last-child {
-        text-align: right;
-      }
+        th:last-child, td:last-child {
+          text-align: right;
+        }
 
-      tr {
-        border-bottom: solid 1px white;
-        cursor: pointer;
-        transition: 0.5s ease-in-out;
-        &:hover{
-            background-color: #7fa8d5;
+        tr {
+          border-bottom: solid 1px white;
+          cursor: pointer;
+          transition: 0.5s ease-in-out;
+          &:hover{
+              background-color: #7fa8d5;
+          }
         }
       }
-    }
 
-    &.scrollable {
-        max-height: 70vh;
+      &.scrollable {
+          max-height: 70vh;
+      }
     }
 
     .countPlanets {
-      //position: absolute;
-      //bottom: 0;
-      //left: 0;
       width: 100%;
       color: white;
       padding: 20px;
       backdrop-filter: blur(10px);
       transition: backdrop-filter 0.5s ease-in-out;
-      //z-index: 1;
 
       p {
         color: #659dd9;
         font-size: 1.2rem;
         font-weight: bold;
       }
+
     }
 
   }
 
 
   .display-planets{
-    display: flex;
     border: solid 1px white;
     width: 100%;
     height: max-content;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
 
     p{
       color: #659dd9;
       font-style: italic;
+    }
+
+    .detailsPlanet {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      width: 100%;
+      .detailsPlanet_header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .detailsPlanet_content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+
+        .items {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+
+          .item-logo {
+            font-size: 35px;
+
+            i {
+              color: #659dd9;
+            }
+
+          }
+
+          .item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            h3 {
+              color: #659dd9;
+              font-weight: bold;
+            }
+
+            .gravity, .diameter, .population, .climat, .terrain {
+              color: white;
+
+            }
+          }
+        }
+      }
+    }
+
+    .moreInfo {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+
+      .btn {
+        background-color: black;
+        border: white solid 1px;
+        padding: 10px 15px;
+        text-transform: uppercase;
+
+
+      }
+
     }
 
   }

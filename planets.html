@@ -61,16 +61,19 @@
                     <i class="fas fa-solid fa-globe"></i>
                 </div>
 
-                <table>
-                    <thead>
+                <div class="tablePlanet">
+                    <table>
+                        <thead>
                         <tr>
                             <th>Nom</th>
                             <th>Terrain</th>
                         </tr>
-                    </thead>
-                    <tbody id="planetData">
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody id="planetData">
+                        </tbody>
+                    </table>
+                </div>
+
 
                 <div class="countPlanets">
                     <p class="count"></p>
@@ -78,8 +81,63 @@
             </div>
 
             <div class="display-planets">
-                <p class="toggle">Selectionner le contenu à afficher !</p>
+<!--                <p class="toggle">Selectionner le contenu à afficher !</p>-->
+                <div class="detailsPlanet">
+                    <div class="detailsPlanet_header">
+                        <h2 class="name">Nom de la planéte</h2>
+                        <p class="population"></p>
+                    </div>
 
+                    <div class="detailsPlanet_content">
+                        <div class="items">
+                            <div class="item-logo">
+                                <i class="fa-regular fa-circle"></i>
+                            </div>
+
+                            <div class="item-content">
+                                <h3>Diamètre</h3>
+                                <p class="diameter"></p>
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="item-logo">
+                                <i class="fa-solid fa-temperature-three-quarters"></i>
+                            </div>
+
+                            <div class="item-content">
+                                <h3>Climat</h3>
+                                <p class="climat"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailsPlanet_content">
+                        <div class="items">
+                            <div class="item-logo">
+                                <i class="fa-solid fa-magnet"></i>
+                            </div>
+
+                            <div class="item-content">
+                                <h3>Gravité</h3>
+                                <p class="gravity"></p>
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="item-logo">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+
+                            <div class="item-content">
+                                <h3>Terrain</h3>
+                                <p class="terrain"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="moreInfo">
+                    <button class="btn" type="button">En savoir plus</button>
+                </div>
 
             </div>
 
@@ -87,6 +145,6 @@
     </main>
 
     <script src="./script/planets.js"></script>
-    <script src="https://kit.fontawesome.com/3de56f6143.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3e6ec88294.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,40 +1,37 @@
 const planetData = document.querySelector('#planetData');
 const paragraph = document.querySelector('.text-hidden');
-const maxplanet = document.querySelector('.count');
+const maxplanet = document.querySelector('.countPlanets');
 
-async function getCount(url) {
+async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
 
     return data;
 }
 
-async function displayPlanets(){
-    const planet = (await getCount('https://swapi.dev/api/planets/')).count;
-    maxplanet.textContent = planet + ' planètes';
+async function displayPlanets() {
+    const planets = await getData('https://swapi.dev/api/planets/');
+    const count = planets.count;
+    maxplanet.textContent = count + ' planètes';
 
-    for(let i = 1; i < planet ; i++){
-        const planetID = await getCount(`https://swapi.dev/api/planets/${i}/`);
-        planetData.innerHTML += `
-            <tr class="planets-item">
+    for (let i = 1; i < Math.floor(count / 10); i++) {
+        const planetPerPage = await getData(`https://swapi.dev/api/planets/?page=${i}`);
+        const planetResults = planetPerPage.results;
+
+        planetResults.forEach((planetID) => {
+            const planetItem = document.createElement('tr');
+            planetItem.classList.add('planets-item');
+            planetItem.innerHTML = `
                 <td>${planetID.name}</td>
                 <td>${planetID.terrain}</td>
-            </tr>
             `;
-
-        const sectionPlanets = document.querySelector('.section-planets');
-        if (planet[i] === 10) {
-            sectionPlanets.classList.add('scrollable');
-        }
+            planetData.appendChild(planetItem);
+        });
     }
 
-
-    // planets.forEach(planet => {
-    //     planet.addEventListener('click', () => {
-    //         paragraph.textContent = planet.textContent;
-    //     })
-    // })
-
+    const sectionPlanets = document.querySelector('.section-planets');
+    sectionPlanets.classList.add('scrollable');
 }
+
 displayPlanets();
 
