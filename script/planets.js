@@ -1,5 +1,7 @@
 const planetData = document.querySelector('#planetData');
-const paragraph = document.querySelector('.text-hidden');
+const detailsPlanet = document.querySelector('.detailsPlanet');
+const paragraph = document.querySelector('.toggle');
+const info =document.querySelector('.moreInfo')
 const maxplanet = document.querySelector('.countPlanets');
 const population = document.querySelector('.population');
 const diameter = document.querySelector('.diameter');
@@ -7,11 +9,14 @@ const climate = document.querySelector('.climat');
 const gravity = document.querySelector('.gravity');
 const terrain = document.querySelector('.terrain');
 const name = document.querySelector('.name');
+const loader = document.querySelector('#loader');
 
 onInit();
 
 async function onInit() {
+    showLoader();
     const planets = await getAllPlanets();
+    hiddeLoader();
     displayPlanets(planets);
     displayCount(planets);
 }
@@ -47,6 +52,9 @@ async function displayPlanets(planets) {
       planetData.appendChild(planetItem);
 
       planetItem.addEventListener('click', () => {
+          paragraph.style.display = 'none';
+          detailsPlanet.style.display = 'flex';
+          info.style.display = 'flex';
         displayPlanetsDetails(planet);
       })
   });
@@ -74,21 +82,20 @@ function displayCount(planets){
 
 
 function displayPlanetsDetails(planetDetails){
-    //J'efface les données precedentes
-    name.textContent = '';
-    diameter.textContent = '';
-    climate.textContent = '';
-    population.textContent = '';
-    terrain.textContent = '';
-    gravity.textContent = '';
-
-    // je met a jour les données de la planète
     name.textContent = planetDetails.name;
     population.textContent = planetDetails.population;
     diameter.textContent = planetDetails.diameter;
     climate.textContent = planetDetails.climate;
     gravity.textContent = planetDetails.gravity;
     terrain.textContent = planetDetails.terrain;
+}
+
+function showLoader(){
+    loader.style.display = 'flex';
+}
+
+function hiddeLoader(){
+    loader.style.display = 'none';
 }
 
 

@@ -22,6 +22,5 @@ async function displayCount(countPeople, countVehicles, countPlanets){
     persons.textContent =  countPeople.count;
     vehicles.textContent =  countVehicles.count;
     planets.textContent =  countPlanets.count;
-
 }
 

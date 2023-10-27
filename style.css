@@ -229,6 +229,7 @@ main .container .numbers .section-items-button {
   width: 100%;
 }
 .container-planets .section-planets {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -265,6 +266,35 @@ main .container .numbers .section-items-button {
 .container-planets .section-planets .search {
   width: 100%;
   margin-bottom: 20px;
+}
+.container-planets .section-planets .hidden {
+  display: none;
+}
+.container-planets .section-planets #loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.container-planets .section-planets .spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .container-planets .section-planets .tablePlanet {
   width: 100%;
@@ -323,12 +353,12 @@ main .container .numbers .section-items-button {
   flex-wrap: wrap;
   gap: 20px;
 }
-.container-planets .display-planets p {
+.container-planets .display-planets .toggle {
   color: #659dd9;
   font-style: italic;
 }
 .container-planets .display-planets .detailsPlanet {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 50px;
   width: 100%;
@@ -371,7 +401,7 @@ main .container .numbers .section-items-button {
   color: white;
 }
 .container-planets .display-planets .moreInfo {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
